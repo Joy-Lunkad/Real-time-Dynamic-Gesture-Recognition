@@ -19,7 +19,9 @@ Here are some examples from the Jester Dataset.
 
 Gesture Classes :
 
-![Swiping Left](resources/Swipe_Left.gif) ![Swiping Right](resources/Swipe_Right.gif) ![Stop Sign](resources/Stop_Sign.gif) ![Swiping Down](resources/Swipe_Down.gif) ![Swiping Up](resources/Swipe_up.gif)
+![Swiping Left](resources/Swipe_Left.gif) ![Swiping Right](resources/Swipe_Right.gif) ![Stop Sign](resources/Stop_Sign.gif) 
+
+![Swiping Down](resources/Swipe_Down.gif) ![Swiping Up](resources/Swipe_up.gif)
 
 Doing other things and Doing Nothing Classes :
 
@@ -98,8 +100,6 @@ The inspiration for this method comes from the paper :
 
 ![MFFs Paper - Example](resources/Untitled%205.png)
 
-Figure 1
-
 In this paper, the authors improve performance and reduce the computation by creating motion fused frames(MFFs). 
 
 They are composed by fusing motion information into static RGB image.
@@ -107,7 +107,7 @@ They are composed by fusing motion information into static RGB image.
 To create MFFs from a video:
 
 1. We need to calculate Optical Flow Frames using consecutive previous frames.
-2. We then need to append these frames to the RGB frames as extra channels as shown in fig 1.
+2. We then need to append these frames to the RGB frames as extra channels as shown in the figure above.
 3. Taking one RGB frame, and appending 3 optical flow frames to it will give us one segment.
 4. Each video of the [20BN-jester Dataset](https://20bn.com/datasets/jester) is then converted into 8 equidistant MFF segments.
 
@@ -131,7 +131,9 @@ The videos were preprocessed by [**Aditya Soni**](https://github.com/Dasyud).
 
 The optical flow representation can directly describe the velocity of each individual pixel point in the image. He calculated the horizontal and the vertical components of the optical flow frames by implementing the Brox flow since it had been experimentally proven that it performs better compared to the MPEG flow or the Farneback techniques.  
 
-![Swiping Left](resources/leftMFF.gif) ![Swiping Right](resources/rightMFF.gif) ![Stop Sign](resources/stopMFF.gif) ![Swiping Down](resources/downMFF.gif) ![Swiping Up](resources/upMFF.gif)
+![Swiping Left](resources/leftMFF.gif) ![Swiping Right](resources/rightMFF.gif) ![Stop Sign](resources/stopMFF.gif) 
+
+![Swiping Down](resources/downMFF.gif) ![Swiping Up](resources/upMFF.gif)
 
 # Architectures
 
