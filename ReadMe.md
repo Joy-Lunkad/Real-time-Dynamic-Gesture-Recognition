@@ -17,33 +17,14 @@ There are more than 5000 examples per class for gesture classes and more than 12
 
 Here are some examples from the Jester Dataset.
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Left.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Left.gif)
+Gesture Classes :
 
-Swiping Left
+![Swiping Left](resources/Swipe_Left.gif) ![Swiping Right](resources/Swipe_Right.gif) ![Stop Sign](resources/Stop_Sign.gif) ![Swiping Down](resources/Swipe_Down.gif) ![Swiping Up](resources/Swipe_up.gif)
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Right.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Right.gif)
+Doing other things and Doing Nothing Classes :
 
-Swiping Right
+![Doing other things](resources/doing_other_things.gif) ![Doing nothing](resources/doing_nothing.gif)
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Stop_Sign.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Stop_Sign.gif)
-
-Stop Sign
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Down.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_Down.gif)
-
-Swiping Down
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/doing_nothing.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/doing_nothing.gif)
-
-Doing nothing
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/doing_other_things.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/doing_other_things.gif)
-
-Doing other things
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_up.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Swipe_up.gif)
-
-Swiping Up
 
 # A Light Weight Detector And A Deep Classifier Approach
 
@@ -51,7 +32,7 @@ The inspiration for this method comes from the paper :
 
 [Real-time Hand Gesture Detection and Classification Using Convolutional Neural Networks](https://arxiv.org/abs/1901.10323) By Okan Köpüklü, Ahmet Gunduz, etc. 
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled.png)
+![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled.png](resources/Untitled.png)
 
 In this paper, the authors proposed an architecture which consists of two models, 
 
@@ -80,9 +61,7 @@ The model was then trained for only 7 epochs.
 
 Even though, I used a lot less data overall (only 7 classes worth of data),  the detector achieved **83.5% validation accuracy**. I could also, quite easily, play around with the detection threshold to optimize for accuracy, sensitivity or specificity. Also, the detector which was a binary classifier performed much better than the detector which predicted a one hot vector.
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%201.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%201.png)
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%202.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%202.png)
+![Detector Accuracy](resources/Untitled%201.png) ![Detector Loss](resources/Untitled%202.png)
 
 # Classifier
 
@@ -105,9 +84,9 @@ I used AdamW optimizer with learning rate = 1e-3 and weight decay = 1e-3 and I r
 
 The classifier achieved a **validation accuracy of 85.9%** which was quite impressive considering it was not pretrained on other datasets and only had 7 classes worth videos to train on. The weights from the 7th epoch are used in the classifier
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%203.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%203.png)
+![Classifier Accuracy](resources/Untitled%203.png) ![Classifier Loss](resources/Untitled%204.png)
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%204.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%204.png)
+
 
 ---
 
@@ -117,7 +96,7 @@ The inspiration for this method comes from the paper :
 
 [Motion Fused Frames: Data Level Fusion Strategy for Hand Gesture Recognition](https://arxiv.org/abs/1804.07187) By Okan Köpüklü, Neslihan Köse, Gerhard Rigoll, etc.
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%205.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%205.png)
+![MFFs Paper - Example](resources/Untitled%205.png)
 
 Figure 1
 
@@ -152,29 +131,11 @@ The videos were preprocessed by [**Aditya Soni**](https://github.com/Dasyud).
 
 The optical flow representation can directly describe the velocity of each individual pixel point in the image. He calculated the horizontal and the vertical components of the optical flow frames by implementing the Brox flow since it had been experimentally proven that it performs better compared to the MPEG flow or the Farneback techniques.  
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/leftMFF.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/leftMFF.gif)
-
-Swiping Left
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/rightMFF.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/rightMFF.gif)
-
-Swiping Right
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/stopMFF.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/stopMFF.gif)
-
-Stop Sign
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/downMFF.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/downMFF.gif)
-
-Swiping Down
-
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/upMFF.gif](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/upMFF.gif)
-
-Swiping Up
+![Swiping Left](resources/leftMFF.gif) ![Swiping Right](resources/rightMFF.gif) ![Stop Sign](resources/stopMFF.gif) ![Swiping Down](resources/downMFF.gif) ![Swiping Up](resources/upMFF.gif)
 
 # Architectures
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%206.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Untitled%206.png)
+![MFF paper architecture](resources/Untitled%206.png)
 
 This is the architecture used in the paper.
 
@@ -186,7 +147,7 @@ Here are some of the architectures I tried.
 
  In the First Version of the architecture, the x_input to the model was in the shape of (batch_size, 8 (segments), 224, 224, 9). 9 channels in each segment are made up of 3 RGB channels and 6 flow channels. **The CNN encoder shares its weights across all the segments.**
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Gesture_v12.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/Gesture_v12.png)
+![Gesture Model V1](resources/Gesture_v12.png)
 
 ## **Second Architecture :**
 
@@ -194,13 +155,13 @@ In this architecture, I decided to **remove** the **Reduce Channels Block** beca
 
 To fix this drawback, The second architecture had separation of the RGB channels and the Flow channels at Input. The Flow channels go into a separate "**Flow Model**" which is a **3D - ResNet type architecture** to get their embeddings. These embeddings were then concatenated with the RGB embeddings calculated in the same way as in the First architecture.
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/gesture_model_v3.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/gesture_model_v3.png)
+![Gesture Model V2](resources/gesture_model_v3.png)
 
 ## **Third Architecture** **:**
 
 This Architecture is the best performing architecture**.** It is more optimized, faster and more accurate than the Second Architecture. I also found that the model finds it easier to backpropagate gradients with this architecture. Here, **the CNN Model shares its weights across all segments**.
 
-![Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/gesture_model_v4.png](Real-time%20Dynamic%20Gesture%20Recognition%20c9e9989f042745f29afd65218e30a9f5/gesture_model_v4.png)
+![Gesture Model V3](resources/gesture_model_v4.png)
 
 # Results
 
@@ -573,8 +534,8 @@ class Gesture_Model(tf.keras.Model):
         self.accuracy_tracker.update_state(y_true, pred)
 
         return {'loss' : self.loss_tracker.result(), 
-								'accuracy' : self.accuracy_tracker.result()
-								}
+		'accuracy' : self.accuracy_tracker.result()
+		}
 
     def test_step(self, data):
         rgb_segments, flow_segments, y_true = data
@@ -585,9 +546,9 @@ class Gesture_Model(tf.keras.Model):
         self.loss_tracker.update_state(loss)
         self.accuracy_tracker.update_state(y_true, pred)
         
-				return {'val_loss' : self.loss_tracker.result(), 
-								'val_accuracy' : self.accuracy_tracker.result()
-								}
+	return {'val_loss' : self.loss_tracker.result(), 
+		'val_accuracy' : self.accuracy_tracker.result()
+		}
 
 gesture_model = Gesture_Model(cnn_model, flow_model, fcn_model, batch_size)
 
